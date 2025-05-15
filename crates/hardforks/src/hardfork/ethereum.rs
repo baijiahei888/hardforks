@@ -45,6 +45,7 @@ hardfork!(
         Shanghai,
         /// Cancun: <https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/cancun.md>
         Cancun,
+        PrimordialPulseBlock,
         /// Prague.
         Prague,
         /// Osaka: <https://eips.ethereum.org/EIPS/eip-7607>
@@ -415,6 +416,26 @@ impl EthereumHardfork {
             (Self::Shanghai, ForkCondition::Timestamp(MAINNET_SHANGHAI_TIMESTAMP)),
             (Self::Cancun, ForkCondition::Timestamp(MAINNET_CANCUN_TIMESTAMP)),
             (Self::Prague, ForkCondition::Timestamp(MAINNET_PRAGUE_TIMESTAMP)),
+        ]
+    }
+    pub const fn pulsenet() -> [(EthereumHardfork, ForkCondition); 16] {
+        [
+            (Self::Frontier, ForkCondition::Block(0)),
+            (Self::Homestead, ForkCondition::Block(1150000)),
+            (Self::Dao, ForkCondition::Block(1920000)),
+            (Self::Tangerine, ForkCondition::Block(2463000)),
+            (Self::SpuriousDragon, ForkCondition::Block(2675000)),
+            (Self::Byzantium, ForkCondition::Block(4370000)),
+            (Self::Constantinople, ForkCondition::Block(7280000)),
+            (Self::Petersburg, ForkCondition::Block(7280000)),
+            (Self::Istanbul, ForkCondition::Block(9069000)),
+            (Self::MuirGlacier, ForkCondition::Block(9200000)),
+            (Self::Berlin, ForkCondition::Block(12244000)),
+            (Self::London, ForkCondition::Block(12965000)),
+            (Self::ArrowGlacier, ForkCondition::Block(13773000)),
+            (Self::GrayGlacier, ForkCondition::Block(15050000)),
+            (Self::Shanghai, ForkCondition::Timestamp(1683786515)),
+            (Self::PrimordialPulseBlock, ForkCondition::Block(17_233_000)),
         ]
     }
 

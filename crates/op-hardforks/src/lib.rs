@@ -286,6 +286,7 @@ impl Index<EthereumHardfork> for OpChainHardforks {
             Shanghai => &self[Canyon],
             Cancun => &self[Ecotone],
             Prague => &self[Isthmus],
+            PrimordialPulseBlock => &self[PrimordialPulseBlock],
             Osaka => panic!("index out of bounds"),
         }
     }
