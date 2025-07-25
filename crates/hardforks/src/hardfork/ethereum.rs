@@ -418,7 +418,7 @@ impl EthereumHardfork {
             (Self::Prague, ForkCondition::Timestamp(MAINNET_PRAGUE_TIMESTAMP)),
         ]
     }
-    pub const fn pulsenet() -> [(EthereumHardfork, ForkCondition); 16] {
+    pub const fn pulsenet() -> [(EthereumHardfork, ForkCondition); 15] {
         [
             (Self::Frontier, ForkCondition::Block(0)),
             (Self::Homestead, ForkCondition::Block(1150000)),
@@ -435,7 +435,6 @@ impl EthereumHardfork {
             (Self::ArrowGlacier, ForkCondition::Block(13773000)),
             (Self::GrayGlacier, ForkCondition::Block(15050000)),
             (Self::Shanghai, ForkCondition::Timestamp(1683786515)),
-            (Self::PrimordialPulseBlock, ForkCondition::Block(17_233_000)),
         ]
     }
 
