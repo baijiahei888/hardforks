@@ -5,7 +5,7 @@ use crate::{
 };
 use alloc::vec::Vec;
 use alloy_chains::Chain;
-use alloy_primitives::U256;
+use alloy_primitives::{uint, U256};
 
 hardfork!(
     /// The name of an Ethereum hardfork.
@@ -441,7 +441,7 @@ impl EthereumHardfork {
                 ForkCondition::TTD {
                     activation_block_number: 17_233_000,
                     fork_block: Some(17_233_000),
-                    total_difficulty: SEPOLIA_PARIS_TTD,
+                    total_difficulty: uint!(58_750_003_716_598_352_947_541_U256),
                 },
             ),
         ]
