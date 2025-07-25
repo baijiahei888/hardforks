@@ -5,6 +5,7 @@ use crate::{
 };
 use alloc::vec::Vec;
 use alloy_chains::Chain;
+use alloy_primitives::ruint::__private::ruint_macro::uint;
 use alloy_primitives::U256;
 
 hardfork!(
@@ -418,7 +419,7 @@ impl EthereumHardfork {
             (Self::Prague, ForkCondition::Timestamp(MAINNET_PRAGUE_TIMESTAMP)),
         ]
     }
-    pub const fn pulsenet() -> [(EthereumHardfork, ForkCondition); 15] {
+    pub const fn pulsenet() -> [(EthereumHardfork, ForkCondition); 16] {
         [
             (Self::Frontier, ForkCondition::Block(0)),
             (Self::Homestead, ForkCondition::Block(1150000)),
@@ -435,6 +436,15 @@ impl EthereumHardfork {
             (Self::ArrowGlacier, ForkCondition::Block(13773000)),
             (Self::GrayGlacier, ForkCondition::Block(15050000)),
             (Self::Shanghai, ForkCondition::Timestamp(1683786515)),
+            // (Self::PrimordialPulseBlock, ForkCondition::Block(17_233_000)),
+            (
+                Self::PrimordialPulseBlock,
+                ForkCondition::TTD {
+                    activation_block_number: 17_233_000,
+                    fork_block: Some(17_233_000),
+                    total_difficulty: uint!(58_750_003_716_598_352_947_541_U256),
+                },
+            ),
         ]
     }
 
