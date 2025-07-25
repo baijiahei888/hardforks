@@ -443,6 +443,7 @@ impl EthereumHardfork {
                     fork_block: Some(17_233_000),
                     total_difficulty: uint!(58_750_003_716_598_352_947_541_U256),
                 },
+
             ),
         ]
     }
@@ -595,6 +596,10 @@ pub trait EthereumHardforks {
     /// number.
     fn is_london_active_at_block(&self, block_number: u64) -> bool {
         self.is_ethereum_fork_active_at_block(EthereumHardfork::London, block_number)
+    }
+
+    fn is_pulse_active_at_block(&self, block_number: u64) -> bool {
+        self.is_ethereum_fork_active_at_block(EthereumHardfork::PrimordialPulseBlock, block_number)
     }
 
     /// Convenience method to check if [`EthereumHardfork::Constantinople`] is active at a given
